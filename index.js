@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const Promise = require('bluebird');
+const path = require('path');
 
 const app = express();
 
@@ -16,6 +17,10 @@ mongoose.createConnection(databaseUri, (err, res) => {
   }
 });
 mongoose.connect(databaseUri);
+
+const staticAssetsDirectory = path.join(__dirname, 'assets', 'photos');
+
+app.use('/photographs', express.static(staticAssetsDirectory));
 
 app.get('/', (req, res) => {
   res.send("Hello World!");
