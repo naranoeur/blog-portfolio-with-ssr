@@ -3,6 +3,9 @@ const express = require('express');
 const mongoose = require('mongoose');
 const Promise = require('bluebird');
 const path = require('path');
+// const homeRoute = require('./routes/home');
+// const photoRoute = require('./routes/photo');
+const photosRoute = require('./routes/photos');
 
 const app = express();
 
@@ -20,11 +23,13 @@ mongoose.connect(databaseUri);
 
 const staticAssetsDirectory = path.join(__dirname, 'assets', 'photos');
 
+// Static Assets
 app.use('/photographs', express.static(staticAssetsDirectory));
 
-app.get('/', (req, res) => {
-  res.send("Hello World!");
-});
+// Routes
+// app.use('/', homeRoute);
+app.use('/', photosRoute);
+// app.use('/photo', photoRoute);
 
 app.listen(process.env.PORT, () => {
   console.log(`Listening on port ${process.env.PORT}`);
