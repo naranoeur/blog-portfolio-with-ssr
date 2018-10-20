@@ -9,7 +9,7 @@ module.exports = (data) => {
   const jsx = sheet.collectStyles(<Photos {...data} />);
   const appBody = ReactDOMServer.renderToString(jsx);
   const styleTags = sheet.getStyleTags();
-
+  
   return `
   <!DOCTYPE html>
   <html lang="en">
@@ -28,7 +28,7 @@ module.exports = (data) => {
     </style>
   </head>
   <body>
-    ${appBody}
+    <div id="app">${appBody}</div>
   </body>
   </html>
   `;

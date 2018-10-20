@@ -12,7 +12,7 @@ const PhotosStyle = styled.div`
 
 const Photos = (props) => {
   const { photos } = props;
-  const photosListJsx = photos.map(photo => <Photo {...photo} />);
+  const photosListJsx = photos.map((photo, i) => <Photo {...photo} key={i} />);
   return (
     <PhotosStyle>
       {photosListJsx}
