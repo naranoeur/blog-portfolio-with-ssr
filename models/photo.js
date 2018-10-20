@@ -20,6 +20,14 @@ const schema = new mongoose.Schema({
     type: String,
     default: "",
   },
+  gpsCoordinates: {
+    type: String,
+    default: "",
+  },
+  date: {
+    type: String,
+    default: "",
+  },
   hashTags: {
     type: [String],
     default: [],
