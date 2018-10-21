@@ -18,11 +18,8 @@ const PhotoStyle = styled.div`
       max-width: 100%;
     }
     .LazyLoad {
-      height: 600px
+      height: ${props => props.imageFinishedLoading ? "auto" : "600px"};
       background-color: #f0f0f0;
-    }
-    .LazyLoad.is-visible {
-      height: auto;
     }
   }
 `;
