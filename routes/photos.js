@@ -1,6 +1,6 @@
 const express = require('express');
 const Photo = require('../models/photo');
-const photosRenderer = require('../renderers/photos.js');
+const photosRenderer = require('../dist/renderers/photos.js');
 const formatPhotosData = require('../behaviors/photos.js');
 
 const router = express.Router();

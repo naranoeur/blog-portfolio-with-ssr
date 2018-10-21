@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import { ServerStyleSheet } from 'styled-components';
+import serialize from "serialize-javascript";
 import Photos from '../components/Photos';
 
 module.exports = (data) => {
@@ -9,7 +10,7 @@ module.exports = (data) => {
   const jsx = sheet.collectStyles(<Photos {...data} />);
   const appBody = ReactDOMServer.renderToString(jsx);
   const styleTags = sheet.getStyleTags();
-  
+
   return `
   <!DOCTYPE html>
   <html lang="en">
@@ -18,6 +19,7 @@ module.exports = (data) => {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Photos!</title>
+    <script>window.__INITIAL_DATA__ = ${serialize(data)}</script>
     ${styleTags}
     <style>
       body {
@@ -29,6 +31,7 @@ module.exports = (data) => {
   </head>
   <body>
     <div id="app">${appBody}</div>
+    <script src="${data.clientJsUrl}" ></script>
   </body>
   </html>
   `;
