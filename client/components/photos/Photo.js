@@ -44,7 +44,7 @@ class Photo extends React.Component {
     return (
       <PhotoStyle imageFinishedLoading={imageFinishedLoading}>
         <div className="mainPhotoContainer">
-          <LazyLoad debounce={false}>
+          <LazyLoad debounce={false} offset="400">
             <img
               className="mainPhoto"
               src={photoUrl}
