@@ -13,6 +13,7 @@ const PhotoStyle = styled.div`
   }
   .mainPhotoContainer {
     margin: 0 auto 10px auto;
+    overflow: hidden;
     .mainPhoto {
       display: block;
       max-width: 100%;
