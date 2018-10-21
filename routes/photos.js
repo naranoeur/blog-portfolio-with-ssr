@@ -6,7 +6,7 @@ const formatPhotosData = require('../behaviors/photos.js');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-  Photo.find({})
+  Photo.find({}).sort({ order: -1 })
     .then(photoRawData => {
       const data = formatPhotosData({ photos: photoRawData});
       res.send(photosRenderer(data));

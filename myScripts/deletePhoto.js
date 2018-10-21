@@ -16,9 +16,19 @@ mongoose.connect(databaseUri, (err, res) => {
   }
 });
 
-Photo.findOne({name: "0-iphones.png"})
-  .then(photo => {
-    photo.remove();
+// Photo.findOne({name: "0-iphones.png"})
+//   .then(photo => {
+//     photo.remove();
+//   })
+//   .catch("failed to delete photo");
+
+Photo.find({})
+  .then(photos => {
+    for (let i = 0; i < photos.length; i++) {
+      photos[i].remove()
+        .then(() => console.log("deleted sucessfully", i))
+        .catch(() => console.log("failed to delete", i));
+    }
   })
   .catch("failed to delete photo");
 

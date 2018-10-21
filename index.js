@@ -3,6 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const Promise = require('bluebird');
 const path = require('path');
+const compression = require('compression');
 // const homeRoute = require('./routes/home');
 // const photoRoute = require('./routes/photo');
 const photosRoute = require('./routes/photos');
@@ -20,6 +21,8 @@ mongoose.createConnection(databaseUri, (err, res) => {
   }
 });
 mongoose.connect(databaseUri);
+
+app.use(compression());
 
 const staticAssetsDirectory = path.join(__dirname, 'assets', 'photos');
 

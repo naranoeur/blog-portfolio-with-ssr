@@ -21,6 +21,7 @@ const date = moment("2018-9-23").format('MMM-DD-YYYY');
 const photos = [
   new Photo({
     name: "1-Angeles-National-Forest-Mount-Baldy-Icehouse-Map.jpg",
+    order: 1,
     description: "The map located at the start of the trailhead for Icehouse Canyon.",
     location: "Angeles National Forest: Mt Baldy Area",
     altTag: "Mount Baldy Area Map",
@@ -29,6 +30,7 @@ const photos = [
   }),
   new Photo({
     name: "2-Angeles-National_Forest-Icehouse-Creek.jpg",
+    order: 2,
     description: "The creek runs along Icehouse Canyon Trail.",
     location: "Angeles National Forest: Icehouse Canyon Trail",
     altTag: "Creek with Waterfalls",
@@ -37,6 +39,7 @@ const photos = [
   }),
   new Photo({
     name: "3-Angeles-National_Forest-Icehouse-Waterfall.jpg",
+    order: 3,
     description: "The creek along the trail sometimes creates beautiful waterfalls.",
     location: "Angeles National Forest: Icehouse Canyon Trail",
     altTag: "Waterfall",
@@ -45,6 +48,7 @@ const photos = [
   }),
   new Photo({
     name: "4-Angeles-National-Forest-Icehouse-Canyon-Trail.jpg",
+    order: 4,
     description: "The trail was mostly shaded by the trees.",
     location: "Angeles National Forest: Icehouse Canyon Trail",
     altTag: "Shaded forest trail with sun spots",
@@ -53,6 +57,7 @@ const photos = [
   }),
   new Photo({
     name: "5-Angeles-National-Forest-Chapman-Trail.jpg",
+    order: 5,
     description: "The trees thinned out when going up to Cedar Glenn campground. The sun was really beat me up.",
     location: "Angeles National Forest: Mt Baldy Area",
     altTag: "Sunny forest trail with mountain view",
@@ -61,6 +66,7 @@ const photos = [
   }),
   new Photo({
     name: "6-Angeles-National-Forest-Fall.jpg",
+    order: 6,
     description: "Some fall colors have already started to appear at the end of September.",
     location: "Angeles National Forest: Mt Baldy Area",
     altTag: "Fall forest",
@@ -69,6 +75,7 @@ const photos = [
   }),
   new Photo({
     name: "7-Angeles-National-forest-Cedar-Glenn-Campground.jpg",
+    order: 7,
     description: "Cedar Glenn campground opened up small patch of level ground to pitch a tent on.",
     location: "Angeles National Forest: Cedar Glenn Campground",
     altTag: "Cedar Glenn campground signpost",
@@ -77,6 +84,7 @@ const photos = [
   }),
   new Photo({
     name: "8-Angeles-National-Forest-Bluejay-sideways.jpg",
+    order: 8,
     description: "Curious blue jays, 3 couples, came to check out what we were eating. I was able to take a photo of one of them.",
     location: "Angeles National Forest: Cedar Glenn Campground",
     altTag: "Bluejay head turned sideways",
@@ -85,6 +93,7 @@ const photos = [
   }),
   new Photo({
     name: "9-Angeles-National-Forest-Cedar-Glenn-Campground-sunset-Lost-Angeles-skyline.jpg",
+    order: 9,
     description: "As the sunset lit up the sky in bright orange, the Los Angeles city skyline became visible.",
     location: "Angeles National Forest: Cedar Glenn Campground",
     altTag: "Sunset Los Angeles skyline",
@@ -93,6 +102,7 @@ const photos = [
   }),
   new Photo({
     name: "10-Angeles-National-Forest-Cedar-Glenn-Campground-Night-sky-stars.jpg",
+    order: 10,
     description: "The night sky was dotted with many stars.",
     location: "Angeles National Forest: Cedar Glenn Campground",
     altTag: "Stars at night",
@@ -101,6 +111,7 @@ const photos = [
   }),
   new Photo({
     name: "11-Angeles-National-Forest-Cedar-Glenn-Campground-Tent-Night.jpg",
+    order: 11,
     description: "The full moon provided a lot of light to get around at night. I slept with the tent fly off. It was really a great night.",
     location: "Angeles National Forest: Cedar Glenn Campground",
     altTag: "Two tents in forest",

@@ -6,6 +6,11 @@ const schema = new mongoose.Schema({
     required: true,
     lowercase: true,
     unique: true,
+  },
+  order: {
+    type: Number,
+    default: 0,
+    unique: true,
     index: true,
   },
   description: {
