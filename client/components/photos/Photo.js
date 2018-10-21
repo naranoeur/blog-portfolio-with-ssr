@@ -33,9 +33,9 @@ class Photo extends React.Component {
     this.handleImageFinishedLoading = this.handleImageFinishedLoading.bind(this);
   }
   handleImageFinishedLoading () {
-    window.setTimeout(() => {
+    // window.setTimeout(() => {
       this.setState({ imageFinishedLoading: true });
-    }, 100);
+    // }, 100);
   }
   render() {
     const { imageFinishedLoading } = this.state;
