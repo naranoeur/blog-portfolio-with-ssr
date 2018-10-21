@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 
 const AssetsPlugin = require('assets-webpack-plugin');
-// const nodeExternals = require('webpack-node-externals');
+const nodeExternals = require('webpack-node-externals');
 
 module.exports = [  {
     mode: 'production',
@@ -14,10 +14,9 @@ module.exports = [  {
       filename: './[name].js',
       path: path.resolve(__dirname, 'dist', 'renderers'),
       libraryTarget: 'commonjs2',
-      hotUpdateChunkFilename: './hot-update.js',
-      hotUpdateMainFilename: './hot-update.json'
     },
     target: 'node',
+    externals: [nodeExternals()],
     module: {
       rules: [
         {
@@ -31,13 +30,7 @@ module.exports = [  {
       ]
     },
     stats: { colors: true },
-    plugins: [
-      new webpack.HotModuleReplacementPlugin(),
-      // new AssetsPlugin({
-      //   fullPath: false,
-      //   filename: "assets.json"
-      // })
-    ]
+    plugins: [],
   },
   {
     mode: 'production',
@@ -46,10 +39,8 @@ module.exports = [  {
     },
     output: {
         path: path.resolve(__dirname, 'dist', 'clientJS'),
-        filename: './[name].js',
+        filename: './[name].[chunkhash].js',
         publicPath: process.env.ASSET_BASE_URL,
-        hotUpdateChunkFilename: './client-hot-update.js',
-        hotUpdateMainFilename: './client-hot-update.json'
     },
     module: {
       rules: [
@@ -65,7 +56,6 @@ module.exports = [  {
     },
     stats: { colors: true },
     plugins: [
-      new webpack.HotModuleReplacementPlugin(),
       new AssetsPlugin({
         fullPath: false,
         filename: "assets.json"
