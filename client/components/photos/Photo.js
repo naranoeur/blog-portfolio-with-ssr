@@ -17,6 +17,8 @@ const PhotoStyle = styled.div`
   .mainPhotoContainer {
     margin: 0 auto 10px auto;
     overflow: hidden;
+    display: block;
+    position: relative;
     .mainPhoto {
       display: block;
       max-width: 100%;
@@ -24,6 +26,15 @@ const PhotoStyle = styled.div`
     .LazyLoad {
       height: ${props => props.imageFinishedLoading ? "auto" : "600px"};
       background-color: #f0f0f0;
+    }
+    .photoLink {
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      display: block;
+      position: absolute;
+      z-index: 10;
     }
   }
 `;
@@ -43,18 +54,19 @@ class Photo extends React.Component {
   }
   render() {
     const { imageFinishedLoading } = this.state;
-    const { photoUrl, altTag, description, location } = this.props;
+    const { photoUrl, photoSrcUrl, altTag, description, location } = this.props;
     return (
       <PhotoStyle imageFinishedLoading={imageFinishedLoading}>
         <div className="mainPhotoContainer">
           <LazyLoad debounce={false} offset={400}>
             <img
               className="mainPhoto"
-              src={photoUrl}
+              src={photoSrcUrl}
               alt={altTag}
               onLoad={this.handleImageFinishedLoading}
             />
           </LazyLoad>
+          <a href={photoUrl} className="photoLink" />
         </div>
         { location && <div className="location"><span>Location: </span>{location}</div>}
         <div className="description">{description}</div>

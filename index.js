@@ -5,7 +5,6 @@ const Promise = require('bluebird');
 const path = require('path');
 const compression = require('compression');
 // const homeRoute = require('./routes/home');
-// const photoRoute = require('./routes/photo');
 const photosRoute = require('./routes/photos');
 
 const app = express();
@@ -32,7 +31,7 @@ app.use('/assets', express.static(path.join(__dirname, 'dist', 'assets')));
 
 // Routes
 // app.use('/', homeRoute);
-app.use('/', photosRoute);
+app.use('/photos', photosRoute);
 // app.use('/photo', photoRoute);
 
 app.listen(process.env.PORT, () => {

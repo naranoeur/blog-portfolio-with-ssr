@@ -1,10 +1,11 @@
-const bodyTransformers = require('./transformers/bodyTransformers');
+const photosTransformers = require('./transformers/photosTransformers');
 
 const {
   buildJsAssetUrl,
   buildNextPageUrl,
   buildPreviousPageUrl,
-} = bodyTransformers;
+  buildPhotoUrl,
+} = photosTransformers;
 
 module.exports = (req) => {
   const { rawData } = req;
@@ -14,7 +15,8 @@ module.exports = (req) => {
     previousPageUrl: buildPreviousPageUrl(req),
     clientJsUrl: buildJsAssetUrl(),
     photos: photos.map((photo) => ({
-      photoUrl: `${process.env.PHOTOGRAPHS_URL}/${photo.name}`,
+      photoSrcUrl: `${process.env.PHOTOGRAPHS_URL}/${photo.name}`,
+      photoUrl: buildPhotoUrl(photo),
       description: photo.description,
       altTag: photo.altTag,
       location: photo.location,

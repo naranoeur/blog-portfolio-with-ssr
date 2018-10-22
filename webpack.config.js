@@ -8,7 +8,8 @@ module.exports = [  {
     mode: 'production',
     entry: {
       home: './client/serverRenderers/Home.js',
-      photos: './client/serverRenderers/Photos.js'
+      photos: './client/serverRenderers/Photos.js',
+      photo: './client/serverRenderers/Photo.js',
     },
     output: {
       filename: './[name].js',
