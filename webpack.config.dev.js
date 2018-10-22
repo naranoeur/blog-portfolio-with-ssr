@@ -45,7 +45,7 @@ module.exports = [  {
       Photos: './client/clientScripts/Photos.js'
     },
     output: {
-        path: path.resolve(__dirname, 'dist', 'clientJS'),
+        path: path.resolve(__dirname, 'dist', 'assets'),
         filename: './[name].js',
         publicPath: process.env.ASSET_BASE_URL,
         hotUpdateChunkFilename: './client-hot-update.js',

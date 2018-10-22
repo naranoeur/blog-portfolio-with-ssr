@@ -28,7 +28,7 @@ const staticAssetsDirectory = path.join(__dirname, 'assets', 'photographs');
 
 // Static Assets
 app.use('/photographs', express.static(staticAssetsDirectory));
-app.use('/assets', express.static(path.join(__dirname, 'dist', 'clientJS')));
+app.use('/assets', express.static(path.join(__dirname, 'dist', 'assets')));
 
 // Routes
 // app.use('/', homeRoute);
