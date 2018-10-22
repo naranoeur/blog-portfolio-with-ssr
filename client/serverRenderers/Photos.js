@@ -28,6 +28,8 @@ module.exports = (data) => {
         font-size: 16px;
         background-color: #ebecf2;
         font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue","Fira Sans",Ubuntu,Oxygen,"Oxygen Sans",Cantarell,"Droid Sans","Apple Color Emoji","Segoe UI Emoji","Segoe UI Emoji","Segoe UI Symbol","Lucida Grande",Helvetica,Arial,sans-serif;
+        padding: 0;
+        margin: 0;
       }
     </style>
   </head>

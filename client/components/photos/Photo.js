@@ -3,13 +3,16 @@ import LazyLoad from 'react-lazy-load';
 import styled from 'styled-components';
 
 const PhotoStyle = styled.div`
-  border-bottom: 1px solid #aaa;
-  padding: 15px 0;
-  &:last-child {
-    border-bottom: none;
+  padding: 10px 0;
+  background-color: white;
+  border-radius: 2px;
+  line-height: 21px;
+  margin-bottom: 10px;
+  .location {
+    margin: 0 10px 5px 10px;
   }
   .description {
-    margin-bottom: 15px;
+    margin: 0 10px 15px 10px;
   }
   .mainPhotoContainer {
     margin: 0 auto 10px auto;

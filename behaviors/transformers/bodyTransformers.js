@@ -7,6 +7,25 @@ const buildJsAssetUrl = () => {
   return URI(`${assetBaseUrl}/${filename}`);
 }
 
+const buildPreviousPageUrl = (req) => {
+  const { query } = req;
+  const pageNumber = query.page ? Number(query.page) : 1;
+  const lastPhoto = Number(process.env.LAST_PHOTO);
+  const photoLimit = Number(process.env.PHOTO_LIMIT);
+  const lastPage = Math.ceil(lastPhoto / photoLimit)
+  if (pageNumber >= lastPage) return null;
+  return URI(process.env.HOST).query({ page: Number(pageNumber) + 1 }).toString();
+}
+
+const buildNextPageUrl = (req) => {
+  const { query } = req;
+  const pageNumber = query.page ? Number(query.page) : 1;
+  if (!query.page || pageNumber <= 1) return null;
+  return URI(process.env.HOST).query({ page: Number(pageNumber) - 1 }).toString();
+}
+
 module.exports = {
   buildJsAssetUrl,
+  buildNextPageUrl,
+  buildPreviousPageUrl,
 }
