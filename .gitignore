@@ -1,5 +1,6 @@
 node_modules
 .env
-assets/photos
+assets/photographs
 package-lock.json
 dist
+assets.json

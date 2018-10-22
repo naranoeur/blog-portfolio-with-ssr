@@ -24,7 +24,7 @@ mongoose.connect(databaseUri);
 
 app.use(compression());
 
-const staticAssetsDirectory = path.join(__dirname, 'assets', 'photos');
+const staticAssetsDirectory = path.join(__dirname, 'assets', 'photographs');
 
 // Static Assets
 app.use('/photographs', express.static(staticAssetsDirectory));
