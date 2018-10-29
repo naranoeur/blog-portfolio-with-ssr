@@ -10,6 +10,7 @@ module.exports = [  {
       home: './client/serverRenderers/Home.js',
       photos: './client/serverRenderers/Photos.js',
       photo: './client/serverRenderers/Photo.js',
+      blogs: './client/serverRenderers/Blogs.js',
     },
     output: {
       filename: './[name].js',
@@ -36,7 +37,8 @@ module.exports = [  {
   {
     mode: 'production',
     entry: {
-      Photos: './client/clientScripts/Photos.js'
+      photos: './client/clientScripts/Photos.js',
+      blogs: './client/clientScripts/Blogs.js',
     },
     output: {
         path: path.resolve(__dirname, 'dist', 'assets'),

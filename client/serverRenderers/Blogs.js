@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import { ServerStyleSheet } from 'styled-components';
-import Photo from '../components/Home';
+import serialize from "serialize-javascript";
+import Blogs from '../components/Blogs';
 import googleAnalytics from './photos/googleAnalytics';
 
 module.exports = (data) => {
 
   const sheet = new ServerStyleSheet();
-  const jsx = sheet.collectStyles(<Photo {...data} />);
+  const jsx = sheet.collectStyles(<Blogs {...data} />);
   const appBody = ReactDOMServer.renderToString(jsx);
   const styleTags = sheet.getStyleTags();
 
@@ -19,7 +20,8 @@ module.exports = (data) => {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Photos!</title>
+    <title>Blogs!</title>
+    <script>window.__INITIAL_DATA__ = ${serialize(data)}</script>
     ${styleTags}
     <style>
       body {
@@ -33,6 +35,7 @@ module.exports = (data) => {
   </head>
   <body>
     <div id="app">${appBody}</div>
+    <script src="${data.clientJsUrl}" ></script>
   </body>
   </html>
   `;

@@ -13,11 +13,15 @@ const schema = new mongoose.Schema({
     unique: true,
     index: true,
   },
+  title: {
+    type: String,
+    default: "",
+  },
   description: {
     type: String,
     default: "",
   },
-  altTag: {
+  photoName: {
     type: String,
     default: "",
   },
@@ -40,4 +44,4 @@ const schema = new mongoose.Schema({
   }
 });
 
-module.exports = mongoose.model('Photo', schema);
+module.exports = mongoose.model('Blog', schema);

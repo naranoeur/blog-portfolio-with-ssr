@@ -4,8 +4,9 @@ const mongoose = require('mongoose');
 const Promise = require('bluebird');
 const path = require('path');
 const compression = require('compression');
-// const homeRoute = require('./routes/home');
+const homeRoute = require('./routes/home');
 const photosRoute = require('./routes/photos');
+const blogRoute = require('./routes/blog');
 
 const app = express();
 
@@ -30,9 +31,15 @@ app.use('/photographs', express.static(staticAssetsDirectory));
 app.use('/assets', express.static(path.join(__dirname, 'dist', 'assets')));
 
 // Routes
-// app.use('/', homeRoute);
+app.use('/', homeRoute);
 app.use('/photos', photosRoute);
-// app.use('/photo', photoRoute);
+app.use('/blog', blogRoute);
+
+// Catch all route
+app.get('*', (req, res) => {
+  // res.sendFile(path.join(__dirname+'/client/build/index.html'));
+  res.status(404).send("404 Not Found");
+});
 
 app.listen(process.env.PORT, () => {
   console.log(`Listening on port ${process.env.PORT}`);
