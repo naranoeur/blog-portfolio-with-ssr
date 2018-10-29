@@ -11,6 +11,7 @@ module.exports = [  {
       photos: './client/serverRenderers/Photos.js',
       photo: './client/serverRenderers/Photo.js',
       blogs: './client/serverRenderers/Blogs.js',
+      blog: './client/serverRenderers/Blog.js',
     },
     output: {
       filename: './[name].js',
@@ -39,6 +40,7 @@ module.exports = [  {
     entry: {
       photos: './client/clientScripts/Photos.js',
       blogs: './client/clientScripts/Blogs.js',
+      blog: './client/clientScripts/Blog.js',
     },
     output: {
         path: path.resolve(__dirname, 'dist', 'assets'),
