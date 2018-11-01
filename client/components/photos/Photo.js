@@ -22,6 +22,7 @@ const PhotoStyle = styled.div`
     .mainPhoto {
       display: block;
       max-width: 100%;
+      margin: 0 auto;
     }
     .LazyLoad {
       height: ${props => props.imageFinishedLoading ? "auto" : "600px"};

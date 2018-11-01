@@ -16,16 +16,16 @@ mongoose.connect(databaseUri, (err, res) => {
   }
 });
 
-const date = moment("2018-9-23").format('MMM-DD-YYYY');
+const date = moment("2018-10-14").format('MMM-DD-YYYY');
 
 
 const blog = new Blog({
-    name: "1-backpacking-cedar-glenn-campground.html",
-    order: 1,
-    title: "Backpacking in Angeles National Forest to Cedar Glenn Campground",
-    description: "What you need to know before you go.",
-    location: "Angeles National Forest",
-    photoName: "7-angeles-national-forest-cedar-glenn-campground.jpg",
+    name: "2-kamakura-enoshima.html",
+    order: 2,
+    title: "Daytrip to Kamakura and Enoshima",
+    description: "Kamakura, an ancient capital of Japan is just an hour ride away from Tokyo.",
+    location: "Kamakura, Japan",
+    photoName: "18-japan-kamakura-daibutsu.jpg",
     hashTags: ["backpacking", "hiking"],
     date,
   })
